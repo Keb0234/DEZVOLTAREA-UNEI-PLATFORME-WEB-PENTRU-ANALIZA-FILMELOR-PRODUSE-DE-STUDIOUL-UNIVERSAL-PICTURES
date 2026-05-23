@@ -61,15 +61,15 @@ def get_movies_list():
 
 def mpaa_rating_logo(rating):
     if rating == "G":
-        st.image(r"media\MPAA Logos\Mpaagrating2000svector_(white).svg", caption="MPAA Rating")
+        st.image(r"media/MPAA Logos/Mpaagrating2000svector_(white).svg", caption="MPAA Rating")
     if rating == "PG":
-        st.image(r"media\MPAA Logos\Mpaapgrating2000svector2_(white).svg", caption="MPAA Rating")
+        st.image(r"media/MPAA Logos/Mpaapgrating2000svector2_(white).svg", caption="MPAA Rating")
     if rating == "PG-13":
-        st.image(r"media\MPAA Logos\Mpaapg13rating2000svector_(white).svg", caption="MPAA Rating")
+        st.image(r"media/MPAA Logos/Mpaapg13rating2000svector_(white).svg", caption="MPAA Rating")
     if rating == "R":
-        st.image(r"media\MPAA Logos\Mpaarrating2000svector_(white).svg", caption="MPAA Rating")
+        st.image(r"media/MPAA Logos/Mpaarrating2000svector_(white).svg", caption="MPAA Rating")
     if rating == "NC-17":
-        st.image(r"media\MPAA Logos\Mpaanc17rating2000svector_(white).svg", caption="MPAA Rating")
+        st.image(r"media/MPAA Logos/Mpaanc17rating2000svector_(white).svg", caption="MPAA Rating")
 
 def sidebar_navigation():
     st.sidebar.markdown("# Segmente proiect")
@@ -373,8 +373,8 @@ def manipulare_date():
                         st.warning("error editing")
 
     with tab5:
-        st.header("Analiza date")
-        
+        st.header("Analiza Date Din Dataset")
+    
         try:
             cursor = collection.find()
             cursor_data = list(cursor)
