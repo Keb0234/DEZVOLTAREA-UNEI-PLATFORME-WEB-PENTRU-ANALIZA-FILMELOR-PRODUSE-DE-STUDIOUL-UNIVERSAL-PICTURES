@@ -651,11 +651,11 @@ def analiza_date_partea_1():
         x=alt.X('budget:Q', title='Movie Budget (USD)', axis=alt.Axis(format='$~s')),
         y=alt.Y('boxOffice:Q', title='Movie Box Office (USD)', axis=alt.Axis(format='$~s')),
         tooltip=['movieTitle', 'budget', 'boxOffice'])
-    scatter = base.mark_circle(size=100).encode(color=alt.condition(brush, 'movieTitle:N', alt.value('lightgray'))).add_params(brush)
+    scatter = base.mark_circle(size=100).encode(color=alt.condition(brush, 'movieTitle:N', alt.value('lightgray')), legend=None).add_params(brush)
     line_budget = alt.Chart(df).mark_rule(color='red', strokeDash=[4, 4]).encode(x='mean(budget):Q').transform_filter(brush)
     line_box_office = alt.Chart(df).mark_rule(color='red', strokeDash=[4, 4]).encode(y='mean(boxOffice):Q').transform_filter(brush)
     quadrant_chart = alt.layer(scatter, line_budget, line_box_office)
-    st.altair_chart(quadrant_chart, use_container_width=True, legend=None)
+    st.altair_chart(quadrant_chart, use_container_width=True)
 
 def analiza_date_partea_2():
     if 'df_shared' not in st.session_state:
