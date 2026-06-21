@@ -432,6 +432,7 @@ def manipulare_date():
                 },
                 barmode="group"
             )
+            fig_box1.update_layout(title_font_size=25)
             st.plotly_chart(fig_box1,width='stretch')
             
             st.header("Informatii despre campurile din baza de date")
